@@ -5718,11 +5718,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\visualstudio\\Desktop\\ApiCopaa\\desenv2022_api_exemplo-main\\exemploApi\\exemploApi.csproj",
+      "projectUniqueName": "C:\\Users\\visualstudio\\Desktop\\ApiCopaa\\desenv2022_api_exemplo-main\\ApiCopa\\exemploApi\\exemploApi.csproj",
       "projectName": "exemploApi",
-      "projectPath": "C:\\Users\\visualstudio\\Desktop\\ApiCopaa\\desenv2022_api_exemplo-main\\exemploApi\\exemploApi.csproj",
+      "projectPath": "C:\\Users\\visualstudio\\Desktop\\ApiCopaa\\desenv2022_api_exemplo-main\\ApiCopa\\exemploApi\\exemploApi.csproj",
       "packagesPath": "C:\\Users\\visualstudio\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\visualstudio\\Desktop\\ApiCopaa\\desenv2022_api_exemplo-main\\exemploApi\\obj\\",
+      "outputPath": "C:\\Users\\visualstudio\\Desktop\\ApiCopaa\\desenv2022_api_exemplo-main\\ApiCopa\\exemploApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\visualstudio\\AppData\\Roaming\\NuGet\\NuGet.Config",

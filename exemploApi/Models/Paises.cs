@@ -11,5 +11,8 @@
         public int IdConfederacao { get; set; }
 
         public bool Sede { get; set; }
+
+        public Confederacao confederacao { get; set; }
+
     }
 }

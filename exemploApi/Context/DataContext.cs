@@ -18,19 +18,25 @@ namespace exemploApi.Context
         
         public DbSet<Confederacao> Confederacao { get; set; }
 
+        public DbSet<Paises> Paises { get; set; }
+
+        public DbSet<Pote> Pote { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.HasDefaultSchema("COPADOMUNDO");
 
             ///////////////////////////////////////////////////////////
 
             modelBuilder.Entity<Confederacao>()
+               
                 .ToTable("Confederacao" )
-                .HasKey("IdConfederacao");
+                
+                .HasKey("IDConfederacao");
 
             modelBuilder.Entity<Confederacao>()
                 .Property(f => f.IDConfederacao)
                 .HasColumnName("ID")
-                .HasColumnType("tinyint")
+                .HasColumnType("INT")
                 .IsRequired();
 
             modelBuilder.Entity<Confederacao>()
@@ -44,6 +50,85 @@ namespace exemploApi.Context
                 .HasColumnName("SIGLA")
                 .HasColumnType("varchar(10)")
                 .IsRequired();
+
+            //////////////////////////////////////////////
+
+
+            modelBuilder.Entity<Paises>()
+
+               .ToTable("Paises")
+               .HasKey("ID");
+
+            modelBuilder.Entity<Paises>()
+              .Property(f => f.ID)
+              .HasColumnName("ID")
+              .HasColumnType("INT")
+              .IsRequired();
+
+            modelBuilder.Entity<Paises>()
+           .Property(f => f.RankingFifa)
+           .HasColumnName("RANKINGFIFA")
+           .HasColumnType("INT")
+           .IsRequired();
+
+            modelBuilder.Entity<Paises>()
+           .Property(f => f.Participantes)
+           .HasColumnName("NOME")
+           .HasColumnType("VARCHAR(50)")
+           .IsRequired();
+
+
+            modelBuilder.Entity<Paises>()
+           .Property(f => f.Sede)
+           .HasColumnName("SEDE")
+           .HasColumnType("BIT")
+           .IsRequired();
+
+
+            modelBuilder.Entity<Paises>()
+           .Property(f => f.IdConfederacao)
+           .HasColumnName("IDCONFEDERACAO")
+           .HasColumnType("int")
+           .IsRequired();
+
+
+
+            modelBuilder.Entity<Paises>()
+                .HasOne(f => f.confederacao)
+                .WithMany()
+                .HasForeignKey(f => f.IdConfederacao);
+
+            /////////////////////////////////////////////////
+
+
+            modelBuilder.Entity<Pote>()
+
+               .ToTable("Pote")
+               .HasKey("IDPote");
+            
+            modelBuilder.Entity<Pote>()
+              .Property(f => f.IDPote)
+              .HasColumnName("ID")
+              .HasColumnType("INT")
+              .IsRequired();
+
+            modelBuilder.Entity<Pote>()
+           .Property(f => f.Descricao)
+           .HasColumnName("DESCRICAO")
+           .HasColumnType("VARCHAR(50)")
+           .IsRequired();
+
+
+
+
+
+
+
+
+
+
+
+
 
             base.OnModelCreating(modelBuilder);
         }

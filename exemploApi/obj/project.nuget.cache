@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "x343rNJ4S0lvlBcKHi1tuHPrpeZ+GJSOubDUVA5bLabO79vFSFLvSZRUI51LU0i5h5kUdrL4kDSI4JhFfZmzEQ==",
+  "dgSpecHash": "lxSTWWIR5B8mBtqrvCWGtDdmYOHSYBzN20US0NlrrW4ot1B4QC2A+66weeU5d2GV4OKcO5LPaQgFXCv9dTs4dA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\visualstudio\\Desktop\\ApiCopaa\\desenv2022_api_exemplo-main\\exemploApi\\exemploApi.csproj",
+  "projectFilePath": "C:\\Users\\visualstudio\\Desktop\\ApiCopaa\\desenv2022_api_exemplo-main\\ApiCopa\\exemploApi\\exemploApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\visualstudio\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\visualstudio\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
