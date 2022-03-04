@@ -21,6 +21,8 @@ namespace exemploApi.Context
         public DbSet<Paises> Paises { get; set; }
 
         public DbSet<Pote> Pote { get; set; }
+
+        public DbSet<PotePais> PotePais { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasDefaultSchema("COPADOMUNDO");
@@ -118,6 +120,26 @@ namespace exemploApi.Context
            .HasColumnType("VARCHAR(50)")
            .IsRequired();
 
+
+            ///////////////////////////
+
+            modelBuilder.Entity<PotePais>()
+
+              .ToTable("Pote")
+              .HasKey("IDPote");
+
+            modelBuilder.Entity<PotePais>()
+            .Property(f => f.IDPote)
+            .HasColumnName("ID")
+            .HasColumnType("INT")
+            .IsRequired();
+
+
+            modelBuilder.Entity<PotePais>()
+           .Property(f => f.IDPais)
+           .HasColumnName("ID")
+           .HasColumnType("INT")
+           .IsRequired();
 
 
 
