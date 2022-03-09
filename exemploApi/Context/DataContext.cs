@@ -23,6 +23,8 @@ namespace exemploApi.Context
         public DbSet<Pote> Pote { get; set; }
 
         public DbSet<PotePais> PotePais { get; set; }
+
+        public DbSet<Grupos> Grupos { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasDefaultSchema("COPADOMUNDO");
@@ -123,34 +125,57 @@ namespace exemploApi.Context
 
             ///////////////////////////
 
-            modelBuilder.Entity<PotePais>()
 
-              .ToTable("Pote")
-              .HasKey("IDPote");
+            modelBuilder.Entity<PotePais>()
+                .HasNoKey()
+               .ToTable("PotePais");
+              
+
 
             modelBuilder.Entity<PotePais>()
             .Property(f => f.IDPote)
-            .HasColumnName("ID")
+            .HasColumnName("IDPOTE")
             .HasColumnType("INT")
             .IsRequired();
 
 
             modelBuilder.Entity<PotePais>()
            .Property(f => f.IDPais)
-           .HasColumnName("ID")
+           .HasColumnName("IDPAIS")
            .HasColumnType("INT")
            .IsRequired();
 
 
+            modelBuilder.Entity<PotePais>()
+                .HasOne(f => f.Paises)
+                .WithMany()
+                .HasForeignKey(f => f.IDPais);
+
+            modelBuilder.Entity<PotePais>()
+                .HasOne(f => f.Pote)
+                .WithMany()
+                .HasForeignKey(f => f.IDPote);
 
 
+            /////////////////////////////////////
 
+            modelBuilder.Entity<Grupos>()
 
+              .ToTable("Grupos")
+              .HasKey("IDGrupo");
 
+            modelBuilder.Entity<Grupos>()
+              .Property(f => f.IDGrupo)
+              .HasColumnName("IDGrupo")
+              .HasColumnType("INT")
+              .IsRequired();
 
-
-
-
+            modelBuilder.Entity<Grupos>()
+              .Property(f => f.Nome)
+              .HasMaxLength(16)
+              .HasColumnName("Nome")
+              .HasColumnType("VARCHAR")
+              .IsRequired();
 
             base.OnModelCreating(modelBuilder);
         }
