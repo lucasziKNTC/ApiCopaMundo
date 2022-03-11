@@ -25,6 +25,8 @@ namespace exemploApi.Context
         public DbSet<PotePais> PotePais { get; set; }
 
         public DbSet<Grupos> Grupos { get; set; }
+
+        public DbSet<Participantes> Participantes { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.HasDefaultSchema("COPADOMUNDO");
@@ -174,6 +176,31 @@ namespace exemploApi.Context
               .Property(f => f.Nome)
               .HasMaxLength(16)
               .HasColumnName("Nome")
+              .HasColumnType("VARCHAR")
+              .IsRequired();
+
+            //////////////////////////////////
+            modelBuilder.Entity<Participantes>()
+
+             .ToTable("Participantes")
+             .HasKey("IDPais");
+
+            modelBuilder.Entity<Participantes>()
+              .Property(f => f.IDPais)
+              .HasColumnName("IDPais")
+              .HasColumnType("INT")
+              .IsRequired();
+
+            modelBuilder.Entity<Participantes>()
+              .Property(f => f.IDGrupo)
+              .HasColumnName("IDGrupo")
+              .HasColumnType("INT")
+              .IsRequired();
+
+            modelBuilder.Entity<Participantes>()
+              .Property(f => f.Participante)
+              .HasMaxLength(50)
+              .HasColumnName("Participantes")
               .HasColumnType("VARCHAR")
               .IsRequired();
 
